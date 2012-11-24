@@ -183,7 +183,7 @@ void QwtHistogram::loadData()
 		Y[i] = gsl_histogram_get (h, i);
 		double lower, upper;
 		gsl_histogram_get_range (h, i, &lower, &upper);
-		X[i] = lower;
+		X[i] = (lower+upper)*0.5;
 	}
 	setData(X, Y.data(), n);
 
